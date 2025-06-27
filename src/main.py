@@ -7,7 +7,7 @@ app = FastAPI()
 app.include_router(users.router)
 app.include_router(plots.router)
 
-# make sure all models are imported
+
 
 Base.metadata.create_all(bind=engine)
 
