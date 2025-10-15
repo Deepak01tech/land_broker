@@ -5,10 +5,10 @@ from sqlalchemy.orm import Session
 from src.db.database import SessionLocal
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from schemas.plot import PlotCreate, PlotOut
-from models.plot import Plot
-from db.database import get_db
-from auth.jwthandler import get_current_user  # your JWT auth
+from src.schemas.plot import PlotCreate, PlotOut
+from src.models.plot import Plot
+from src.db.database import get_db
+from src.auth.jwthandler import get_current_user  # your JWT auth
 
 # router = APIRouter()
 router = APIRouter(prefix="/plots", tags=["Plots"])

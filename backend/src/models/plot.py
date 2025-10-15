@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Float, ForeignKey
 from sqlalchemy.orm import relationship
-from db.database import Base
+from src.db.database import Base
 from typing import Optional
 from pydantic import BaseModel
 
@@ -19,5 +19,6 @@ class Plot(Base):
     description = Column(String(500))
     image = Column(String(255), nullable=True)
 
-    owner_id = Column(Integer, ForeignKey("users.id"))
-    owner = relationship("User", back_populates="plots")
+
+    user = relationship("User", back_populates="plots")
+    user_id = Column(Integer, ForeignKey("users.id"))
